@@ -1,63 +1,91 @@
 /**
- * @name Translucence
- * @version 1.0.6.3
- * @description A translucent/frosted glass Discord theme
- * @author CapnKitten
- *
- * @website http://github.com/CapnKitten
- * @source https://github.com/CapnKitten/BetterDiscord/blob/master/Themes/Translucence/css/source.css
- * @donate https://paypal.me/capnkitten
- * @invite jzJkA6Z
- */
+ * @name Discord+
+ * @author PlusInsta
+ * @authorId 309931975102300160
+ * @authorLink https://plusinsta.xyz
+ * @version 3.2.1
+ * @description A sleek, customizable Discord theme.
+ * @donate https://ko-fi.com/plusinsta
+ * @website https://plusinsta.github.io/discord-plus
+ * @source https://github.com/PlusInsta/discord-plus
+ * @updateUrl https://plusinsta.github.io/discord-plus/DiscordPlus.theme.css
+ * @invite 2Jwh2nS
+*/
+@import url(https://plusinsta.github.io/discord-plus/src/DiscordPlus-source.theme.css);
 
-@import url(https://capnkitten.github.io/BetterDiscord/Themes/Translucence/css/source.css);
+/* I've commented most of these values so you can change them yourself. If you're having trouble, or you want to do more than what these values allow for, a volunteer might be able to help you in my server. */
+
+.theme-dark {
+/* Backdrop image which is shown behind the app. Can also be an HTML color. Falls back to accent color if invalid.
+   To use an image from your computer, upload it somewhere first, copy its link, then paste it below. */
+  --dplus-backdrop: url(https://cdn.discordapp.com/attachments/448954342968655872/1136728631691976815/image.png);
+
+/* Accent color, used to decorate the UI with colors. */
+  --dplus-accent-color-hue: 320;
+  --dplus-accent-color-saturation: 60%;
+  --dplus-accent-color-lightness: 31%;
+
+/* Foreground color: For things like text and icons. */
+  --dplus-foreground-color-hue-base: 210;
+  --dplus-foreground-color-hue-links: 197;
+  --dplus-foreground-color-saturation-amount: 1;
+  --dplus-foreground-color-lightness-amount: 1;
+
+/* Background color: Covers the backdrop so the app is easier to read. */
+  --dplus-background-color-hue: 980;
+  --dplus-background-color-saturation-amount: 1;
+  --dplus-background-color-lightness-amount: 1;
+  --dplus-background-color-alpha: 0.8;
+}
+
+/* If you use light theme, you can give it unique settings that are separate from dark theme. */
+.theme-light {
+  --dplus-backdrop: url();
+  
+  --dplus-accent-color-hue: 320;
+  --dplus-accent-color-saturation: 60%;
+  --dplus-accent-color-lightness: 31%;
+  
+  --dplus-foreground-color-hue-base: 210;
+  --dplus-foreground-color-hue-links: 197;
+  --dplus-foreground-color-saturation-amount: 1;
+  --dplus-foreground-color-lightness-amount: 1;
+
+  --dplus-background-color-hue: 320;
+  --dplus-background-color-saturation-amount: 1;
+  --dplus-background-color-lightness-amount: 1;
+  --dplus-background-color-alpha: 0.8;
+}
 
 :root {
-	--app-bg: url(https://i.imgur.com/bgmVeyt.jpg);
-	--app-blur: 6px;
-	--app-margin: 24px;
-	--app-radius: 8px; /*	-	*/
-	
-	--accent-hue: 950;
-	--accent-saturation: 77.5%;
-	--accent-lightness: 90.1%;
-	--accent-opacity: 1;
-	--accent-text-color: #000; /*	-	*/
+/* Fonts */
+/* You can use any installed font on your device. */
+  --dplus-font-ui: 'Poppins';
+  --dplus-font-body: 'Roboto';
+  --dplus-font-header: 'Righteous';
 
-	--sidebar-color: rgba(0,0,0,0.4);
-	--main-content-color: rgba(0,0,0,0.2); /*	-	*/
+/* Round corner sizes, measured in pixel radius.
+Set avatar/server radius to 50% to make them circular.
+   UI radius must be in pixels, otherwise things break. */
+  --dplus-radius-ui: 10px;
+  --dplus-radius-avatar: 20%;
+  --dplus-radius-server: 20%;
 
-	--message-color: rgba(0,0,0,0.4);
-	--message-radius: 8px;
-	--message-padding-top: 8px;
-	--message-padding-side: 8px; /*	-	*/
-	
-	--reply-hue: 226;
-	--reply-saturation: 77.4%;
-	--reply-lightness: 61.8%;
-	--reply-opacity: 1; /*	-	*/
+/* This decides how much breathing room there should be between things like buttons and content. */
+  --dplus-spacing-ui: 10px;
 
-	--textarea-color: 255,255,255;
-	--textarea-alpha: 0.1;
-	--textarea-alpha-focus: 0.15;
-	--textarea-text-color: #fff;
-	--textarea-radius: 22px;  /*	-	*/
+/* This sets how much space there should be between the app contents and the edges of the window. It also affects the distance between major UI elements, such as the server list to the channel list and channel list to the chat. */
+   --dplus-spacing-app: 10px;
 
-	--card-color: rgba(0,0,0,0.4);
-	--card-color-hover: rgba(0,0,0,0.5);
-	--card-color-select: rgba(0,0,0,0.7); /*	-	*/
-	
-	--button-height: 32px;
-	--button-padding: 0 16px;
-	--button-color: #000000;
-	--button-action-color: #000;
-	--button-radius: 16px; /*	-	*/
+/* Size of user and server icons */
+--dplus-icon-avatar-chat: 64px;
+--dplus-icon-avatar-list: 32px;
+--dplus-icon-avatar-profile: 80px;
 
-	--interactive-normal: #aaa;
-	--interactive-hover: #ddd;
-	--interactive-active: #fff;
-	--interactive-muted: #777; /*	-	*/
+--dplus-icon-server-sidebar: 48px;
+--dplus-icon-server-list: 32px;
 
-	--background-modifier-hover: rgba(255,255,255,0.075);
-	--background-modifier-selected: rgba(255,255,255,0.125);
+/* The Home icon on the top left */
+--dplus-icon-home-dark: url(https://plusinsta.github.io/discord-plus/assets/discord/home_dark.svg);
+--dplus-icon-home-light: url(https://plusinsta.github.io/discord-plus/assets/discord/home_light.svg);
 }
